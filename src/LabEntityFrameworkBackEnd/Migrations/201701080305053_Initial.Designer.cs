@@ -13,7 +13,7 @@ namespace LabEntityFrameworkBackEnd.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201701072326064_Initial"; }
+            get { return "201701080305053_Initial"; }
         }
         
         string IMigrationMetadata.Source

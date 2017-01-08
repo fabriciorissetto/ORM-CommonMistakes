@@ -62,9 +62,11 @@
     <Compile Include="Entidades\Contrato.cs" />
     <Compile Include="Entidades\Curso.cs" />
     <Compile Include="Entidades\InstituicaoEnsino.cs" />
-    <Compile Include="Migrations\201701072326064_Initial.cs" />
-    <Compile Include="Migrations\201701072326064_Initial.Designer.cs">
-      <DependentUpon>201701072326064_Initial.cs</DependentUpon>
+    <Compile Include="Entidades\Mappings\AlunoMapping.cs" />
+    <Compile Include="Entidades\Mappings\InstituicaoEnsinoMapping.cs" />
+    <Compile Include="Migrations\201701080305053_Initial.cs" />
+    <Compile Include="Migrations\201701080305053_Initial.Designer.cs">
+      <DependentUpon>201701080305053_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,8 +77,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201701072326064_Initial.resx">
-      <DependentUpon>201701072326064_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201701080305053_Initial.resx">
+      <DependentUpon>201701080305053_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
