@@ -1,0 +1,82 @@
+C:\Users\marcelosilva\Desktop\Apresentação Entity Framework\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\LabEntityFrameworkBackEnd.dll.config
+C:\Users\marcelosilva\Desktop\Apresentação Entity Framework\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\LabEntityFrameworkBackEnd.dll
+C:\Users\marcelosilva\Desktop\Apresentação Entity Framework\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\LabEntityFrameworkBackEnd.pdb
+C:\Users\marcelosilva\Desktop\Apresentação Entity Framework\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.dll
+C:\Users\marcelosilva\Desktop\Apresentação Entity Framework\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\marcelosilva\Desktop\Apresentação Entity Framework\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.xml
+C:\Users\marcelosilva\Desktop\Apresentação Entity Framework\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\marcelosilva\Desktop\Apresentação Entity Framework\LabEntityFramework\LabEntityFrameworkBackEnd\obj\Debug\LabEntityFrameworkBackEnd.csprojResolveAssemblyReference.cache
+C:\Users\marcelosilva\Desktop\Apresentação Entity Framework\LabEntityFramework\LabEntityFrameworkBackEnd\obj\Debug\LabEntityFrameworkBackEnd.dll
+C:\Users\marcelosilva\Desktop\Apresentação Entity Framework\LabEntityFramework\LabEntityFrameworkBackEnd\obj\Debug\LabEntityFrameworkBackEnd.pdb
+C:\Users\marcelosilva\Desktop\Apresentação Entity Framework\LabEntityFramework\LabEntityFrameworkBackEnd\obj\Debug\LabEntityFrameworkBackEnd.Migrations.Initial.resources
+C:\Users\marcelosilva\Desktop\Apresentação Entity Framework\LabEntityFramework\LabEntityFrameworkBackEnd\obj\Debug\LabEntityFrameworkBackEnd.csproj.GenerateResource.Cache
+C:\TI\Lab\Apresentação Entity Framework\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\LabEntityFrameworkBackEnd.dll.config
+C:\TI\Lab\Apresentação Entity Framework\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\LabEntityFrameworkBackEnd.dll
+C:\TI\Lab\Apresentação Entity Framework\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\LabEntityFrameworkBackEnd.pdb
+C:\TI\Lab\Apresentação Entity Framework\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.BulkInsert.dll
+C:\TI\Lab\Apresentação Entity Framework\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.dll
+C:\TI\Lab\Apresentação Entity Framework\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.Extended.dll
+C:\TI\Lab\Apresentação Entity Framework\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.MappingAPI.dll
+C:\TI\Lab\Apresentação Entity Framework\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.SqlServer.dll
+C:\TI\Lab\Apresentação Entity Framework\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.xml
+C:\TI\Lab\Apresentação Entity Framework\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.BulkInsert.pdb
+C:\TI\Lab\Apresentação Entity Framework\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.Extended.xml
+C:\TI\Lab\Apresentação Entity Framework\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.MappingAPI.pdb
+C:\TI\Lab\Apresentação Entity Framework\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.SqlServer.xml
+C:\TI\Lab\Apresentação Entity Framework\LabEntityFramework\LabEntityFrameworkBackEnd\obj\Debug\LabEntityFrameworkBackEnd.Migrations.Inicial.resources
+C:\TI\Lab\Apresentação Entity Framework\LabEntityFramework\LabEntityFrameworkBackEnd\obj\Debug\LabEntityFrameworkBackEnd.csproj.GenerateResource.Cache
+C:\TI\Lab\Apresentação Entity Framework\LabEntityFramework\LabEntityFrameworkBackEnd\obj\Debug\LabEntityFrameworkBackEnd.dll
+C:\TI\Lab\Apresentação Entity Framework\LabEntityFramework\LabEntityFrameworkBackEnd\obj\Debug\LabEntityFrameworkBackEnd.pdb
+C:\TI\Lab\Apresentação Entity Framework\LabEntityFramework\LabEntityFrameworkBackEnd\obj\Debug\LabEntityFrameworkBackEnd.csprojResolveAssemblyReference.cache
+C:\Users\marcelosilva\Desktop\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\LabEntityFrameworkBackEnd.dll.config
+C:\Users\marcelosilva\Desktop\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\LabEntityFrameworkBackEnd.dll
+C:\Users\marcelosilva\Desktop\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\LabEntityFrameworkBackEnd.pdb
+C:\Users\marcelosilva\Desktop\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.BulkInsert.dll
+C:\Users\marcelosilva\Desktop\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.dll
+C:\Users\marcelosilva\Desktop\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.Extended.dll
+C:\Users\marcelosilva\Desktop\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.MappingAPI.dll
+C:\Users\marcelosilva\Desktop\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\marcelosilva\Desktop\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.xml
+C:\Users\marcelosilva\Desktop\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.BulkInsert.pdb
+C:\Users\marcelosilva\Desktop\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.Extended.xml
+C:\Users\marcelosilva\Desktop\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.MappingAPI.pdb
+C:\Users\marcelosilva\Desktop\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\marcelosilva\Desktop\LabEntityFramework\LabEntityFrameworkBackEnd\obj\Debug\LabEntityFrameworkBackEnd.csprojResolveAssemblyReference.cache
+C:\Users\marcelosilva\Desktop\LabEntityFramework\LabEntityFrameworkBackEnd\obj\Debug\LabEntityFrameworkBackEnd.Migrations.Inicial.resources
+C:\Users\marcelosilva\Desktop\LabEntityFramework\LabEntityFrameworkBackEnd\obj\Debug\LabEntityFrameworkBackEnd.csproj.GenerateResource.Cache
+C:\Users\marcelosilva\Desktop\LabEntityFramework\LabEntityFrameworkBackEnd\obj\Debug\LabEntityFrameworkBackEnd.dll
+C:\Users\marcelosilva\Desktop\LabEntityFramework\LabEntityFrameworkBackEnd\obj\Debug\LabEntityFrameworkBackEnd.pdb
+C:\Users\PC\Desktop\ORM\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\LabEntityFrameworkBackEnd.dll.config
+C:\Users\PC\Desktop\ORM\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\LabEntityFrameworkBackEnd.dll
+C:\Users\PC\Desktop\ORM\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\LabEntityFrameworkBackEnd.pdb
+C:\Users\PC\Desktop\ORM\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.BulkInsert.dll
+C:\Users\PC\Desktop\ORM\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.dll
+C:\Users\PC\Desktop\ORM\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.Extended.dll
+C:\Users\PC\Desktop\ORM\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.MappingAPI.dll
+C:\Users\PC\Desktop\ORM\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\PC\Desktop\ORM\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.xml
+C:\Users\PC\Desktop\ORM\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.BulkInsert.pdb
+C:\Users\PC\Desktop\ORM\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.Extended.xml
+C:\Users\PC\Desktop\ORM\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.MappingAPI.pdb
+C:\Users\PC\Desktop\ORM\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\PC\Desktop\ORM\LabEntityFramework\LabEntityFrameworkBackEnd\obj\Debug\LabEntityFrameworkBackEnd.csprojResolveAssemblyReference.cache
+C:\Users\PC\Desktop\ORM\LabEntityFramework\LabEntityFrameworkBackEnd\obj\Debug\LabEntityFrameworkBackEnd.Migrations.Inicial.resources
+C:\Users\PC\Desktop\ORM\LabEntityFramework\LabEntityFrameworkBackEnd\obj\Debug\LabEntityFrameworkBackEnd.csproj.GenerateResource.Cache
+C:\Users\PC\Desktop\ORM\LabEntityFramework\LabEntityFrameworkBackEnd\obj\Debug\LabEntityFrameworkBackEnd.dll
+C:\Users\PC\Desktop\ORM\LabEntityFramework\LabEntityFrameworkBackEnd\obj\Debug\LabEntityFrameworkBackEnd.pdb
+C:\Users\PC\Desktop\ORM _v2\LabEntityFramework\LabEntityFrameworkBackEnd\obj\Debug\LabEntityFrameworkBackEnd.dll
+C:\Users\PC\Desktop\ORM _v2\LabEntityFramework\LabEntityFrameworkBackEnd\obj\Debug\LabEntityFrameworkBackEnd.pdb
+C:\Users\PC\Desktop\ORM _v2\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\LabEntityFrameworkBackEnd.dll.config
+C:\Users\PC\Desktop\ORM _v2\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\LabEntityFrameworkBackEnd.dll
+C:\Users\PC\Desktop\ORM _v2\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\LabEntityFrameworkBackEnd.pdb
+C:\Users\PC\Desktop\ORM _v2\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.BulkInsert.dll
+C:\Users\PC\Desktop\ORM _v2\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.dll
+C:\Users\PC\Desktop\ORM _v2\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.Extended.dll
+C:\Users\PC\Desktop\ORM _v2\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.MappingAPI.dll
+C:\Users\PC\Desktop\ORM _v2\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\PC\Desktop\ORM _v2\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.xml
+C:\Users\PC\Desktop\ORM _v2\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.BulkInsert.pdb
+C:\Users\PC\Desktop\ORM _v2\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.Extended.xml
+C:\Users\PC\Desktop\ORM _v2\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.MappingAPI.pdb
+C:\Users\PC\Desktop\ORM _v2\LabEntityFramework\LabEntityFrameworkBackEnd\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\PC\Desktop\ORM _v2\LabEntityFramework\LabEntityFrameworkBackEnd\obj\Debug\LabEntityFrameworkBackEnd.csprojResolveAssemblyReference.cache
