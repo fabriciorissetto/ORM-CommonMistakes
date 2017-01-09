@@ -12,7 +12,6 @@ namespace LabEntityFrameworkBackEnd.Repositorios
         public TimeSpan StartTime { get; set; }
         public TimeSpan EndTime { get; set; }
    
-
         public TimeSpan Um_N_Mais_Problema(int numRegistros)
         {
             using (var context = new Contexto())

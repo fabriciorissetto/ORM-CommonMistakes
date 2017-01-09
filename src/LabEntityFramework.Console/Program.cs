@@ -17,12 +17,13 @@ namespace LabEntityFramework.Console
         static void Main(string[] args)
         {
             repositorio = new Repositorio();
-			ShowLoading("Testando conexão com banco de dados...");
-			repositorio.InicializaEFMigrationsNaoAfetarTempo();
-			ShowLoading("Conexão OK!");
+            ShowLoading("Testando conexão com banco de dados...");
+            repositorio.InicializaEFMigrationsNaoAfetarTempo();
+            ShowLoading("Conexão OK!");
 
-			MostrarMenu();
+            MostrarMenu();
             SolicitarOpcaoMenu();
+
             System.Console.Read();
         }
 
@@ -44,7 +45,7 @@ namespace LabEntityFramework.Console
             repositorio.InicializaEFMigrationsNaoAfetarTempo();
 
             var tempoExecucaoSem = repositorio.Um_N_Mais_Solucao(numeroRegistrosExemploNMaisUm);
-            
+
             System.Console.WriteLine(string.Format("Tempo de execução com Include(): {0} segundos", tempoExecucaoSem.TotalSeconds));
             System.Console.WriteLine("");
 
@@ -202,7 +203,7 @@ namespace LabEntityFramework.Console
 
         private static void ExecutarOpcaoMenu(string opcaoSelecionada)
         {
-            var opcoesValidas = new List<string> { "1.1", "1.2", "2.1", "2.2", "3.1", "3.2", "4.1", "4.2","5.1","5.2" };
+            var opcoesValidas = new List<string> { "1.1", "1.2", "2.1", "2.2", "3.1", "3.2", "4.1", "4.2", "5.1", "5.2" };
 
             if (!opcoesValidas.Contains(opcaoSelecionada.Trim()))
             {
