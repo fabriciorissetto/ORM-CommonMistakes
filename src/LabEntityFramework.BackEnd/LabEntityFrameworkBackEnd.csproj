@@ -64,6 +64,7 @@
     <Compile Include="Entidades\InstituicaoEnsino.cs" />
     <Compile Include="Entidades\Mappings\AlunoMapping.cs" />
     <Compile Include="Entidades\Mappings\InstituicaoEnsinoMapping.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Migrations\201701080305053_Initial.cs" />
     <Compile Include="Migrations\201701080305053_Initial.Designer.cs">
       <DependentUpon>201701080305053_Initial.cs</DependentUpon>

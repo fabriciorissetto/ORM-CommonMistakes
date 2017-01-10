@@ -9,10 +9,10 @@ namespace LabEntityFrameworkBackEnd.Repositorios
 {
     public class Repositorio
     {
-        public TimeSpan StartTime { get; set; }
-        public TimeSpan EndTime { get; set; }
-   
-        public TimeSpan Um_N_Mais_Problema(int numRegistros)
+        private TimeSpan StartTime { get; set; }
+        private TimeSpan EndTime { get; set; }
+
+        public TimeSpan Um_N_Mais_Problema(int quantidadeRegistros)
         {
             using (var context = new Contexto())
             {
@@ -22,7 +22,9 @@ namespace LabEntityFrameworkBackEnd.Repositorios
                 RegisterStartTime();
 
                 var alunos = context.Alunos
-                    .AsNoTracking().Take(numRegistros).ToList();
+                                    .AsNoTracking()
+                                    .Take(quantidadeRegistros)
+                                    .ToList();
 
                 foreach (var aluno in alunos)
                 {
@@ -31,22 +33,21 @@ namespace LabEntityFrameworkBackEnd.Repositorios
                 }
 
                 RegisterEndTime();
-
-                
             }
-            return GetExecutionTime();
+            return this.GetExecutionTime;
         }
 
-        public TimeSpan Um_N_Mais_Solucao(int numRegistros)
+        public TimeSpan Um_N_Mais_Solucao(int quantidadeRegistros)
         {
             using (var context = new Contexto())
             {
                 RegisterStartTime();
 
                 var alunos = context.Alunos
-                    .Include("Instituicao")
-                    .Include("Curso")
-                    .AsNoTracking().Take(numRegistros).ToList();
+                                    .Include("Instituicao")
+                                    .Include("Curso")
+                                    .AsNoTracking()
+                                    .Take(quantidadeRegistros).ToList();
 
                 foreach (var aluno in alunos)
                 {
@@ -56,66 +57,52 @@ namespace LabEntityFrameworkBackEnd.Repositorios
 
                 RegisterEndTime();
             }
-            return GetExecutionTime();
+
+            return this.GetExecutionTime;
         }
 
 
-        public TimeSpan Dois_Projecao_Sem_Projecao(int numRegistros)
+        public TimeSpan Dois_Projecao_Sem_Projecao(int quantidadeRegistros)
         {
             using (var contexto = new Contexto())
             {
                 RegisterStartTime();
-
-                contexto.InstituicoesEnsino
-                    .Include("Contrato")
-                    .Include("Cursos").AsNoTracking().Take(numRegistros).ToList();
-
-                RegisterEndTime();
-            }
-            return GetExecutionTime();
-        }
-
-        public TimeSpan Dois_Projecao_Com_Projecao(int numRegistros)
-        {
-            using (var contexto = new Contexto())
-            {
-                RegisterStartTime();
-
-                var listaIntituicoes = new List<InstituicaoEnsino>();
 
                 var instituicoes = contexto.InstituicoesEnsino
-                    .Include("Contrato").Include("Cursos").AsNoTracking().Take(numRegistros)
-                    .Select(p => new
-                    {
-                        InstituicaoId = p.Id,
-                        NomeInstituicao = p.Nome,
-                        Cursos = p.Cursos.Select(c => new { CursoId = c.Id, NomeCurso = c.Nome }),
-                        NumeroContratoInstituicao = p.Contrato.NumeroContrato
-                    }).ToList();
+                                            .Include(x => x.Cursos)
+                                            .AsNoTracking()
+                                            .Take(quantidadeRegistros)
+                                            .ToList();
 
-                instituicoes.ForEach(resultadoQuery =>
-                    listaIntituicoes.Add(new InstituicaoEnsino
-                    {
-                        Id = resultadoQuery.InstituicaoId,
-                        Nome = resultadoQuery.NomeInstituicao,
-                        Contrato = new Contrato
-                        {
-                            NumeroContrato = resultadoQuery.NumeroContratoInstituicao
-                        },
-                        Cursos = resultadoQuery.Cursos.Select(c => new Curso
-                        {
-                            Id = c.CursoId,
-                            Nome = c.NomeCurso
-                        }).ToList()
-                    })
-                );
                 RegisterEndTime();
             }
-            return GetExecutionTime();
+
+            return this.GetExecutionTime;
         }
 
+        public TimeSpan Dois_Projecao_Com_Projecao(int quantidadeRegistros)
+        {
+            using (var contexto = new Contexto())
+            {
+                RegisterStartTime();
 
-        public TimeSpan Tres_UsoDetectChangesHabilitado(int numRegistros)
+                var instituicoes = contexto.InstituicoesEnsino
+                        //.Include(x => x.Cursos)    <-- Não precisa pois está na projeção
+                        //.AsNoTracking()            <-- Não precisa pois a projeção não é adicionada no contexto
+                        .Take(quantidadeRegistros)
+                        .Select(p => new
+                        {
+                            NomeInstituicao = p.Nome,
+                            Cursos = p.Cursos.Count()
+                        }).ToList();
+                
+                RegisterEndTime();
+            }
+
+            return this.GetExecutionTime;
+        }
+
+        public TimeSpan Tres_UsoDetectChangesHabilitado(int quantidadeRegistros)
         {
             using (var contexto = new Contexto())
             {
@@ -123,7 +110,7 @@ namespace LabEntityFrameworkBackEnd.Repositorios
 
                 var instituicao = contexto.InstituicoesEnsino.Include("Cursos").First();
 
-                for (int i = 0; i < numRegistros; i++)
+                for (int i = 0; i < quantidadeRegistros; i++)
                 {
                     var aluno = new Aluno
                     {
@@ -138,10 +125,10 @@ namespace LabEntityFrameworkBackEnd.Repositorios
 
                 RegisterEndTime();
             }
-            return GetExecutionTime();
+            return this.GetExecutionTime;
         }
 
-        public TimeSpan Tres_UsoDetectChangesDesabilitado(int numRegistros)
+        public TimeSpan Tres_UsoDetectChangesDesabilitado(int quantidadeRegistros)
         {
             using (var contexto = new Contexto())
             {
@@ -151,7 +138,7 @@ namespace LabEntityFrameworkBackEnd.Repositorios
 
                 var instituicao = contexto.InstituicoesEnsino.Include("Cursos").First();
 
-                for (int i = 0; i < numRegistros; i++)
+                for (int i = 0; i < quantidadeRegistros; i++)
                 {
                     var aluno = new Aluno
                     {
@@ -167,25 +154,25 @@ namespace LabEntityFrameworkBackEnd.Repositorios
 
                 RegisterEndTime();
             }
-            return GetExecutionTime();
+            return this.GetExecutionTime;
         }
 
 
-        public TimeSpan Quatro_Objetos_Desnecessarios_Contexto(int numRegistros)
+        public TimeSpan Quatro_Objetos_Desnecessarios_Contexto(int quantidadeRegistros)
         {
-            using(var context = new Contexto())
+            using (var context = new Contexto())
             {
                 RegisterStartTime();
 
                 var alunos = context.Alunos.Include("Curso")
-                    .Take(numRegistros).ToList();
+                    .Take(quantidadeRegistros).ToList();
 
                 RegisterEndTime();
             }
-            return GetExecutionTime();
+            return this.GetExecutionTime;
         }
 
-        public TimeSpan Quatro_Objetos_Desnecessarios_Contexto_Com_AsNoTracking(int numRegistros)
+        public TimeSpan Quatro_Objetos_Desnecessarios_Contexto_Com_AsNoTracking(int quantidadeRegistros)
         {
             using (var context = new Contexto())
             {
@@ -193,15 +180,15 @@ namespace LabEntityFrameworkBackEnd.Repositorios
 
                 var alunos = context.Alunos.Include("Curso")
                     .AsNoTracking()
-                    .Take(numRegistros).ToList();
+                    .Take(quantidadeRegistros).ToList();
 
                 RegisterEndTime();
             }
-            return GetExecutionTime();
+            return this.GetExecutionTime;
         }
 
 
-        public TimeSpan InsertComBulkInsert(int numRegistros)
+        public TimeSpan InsertComBulkInsert(int quantidadeRegistros)
         {
             using (var contexto = new Contexto())
             {
@@ -210,7 +197,7 @@ namespace LabEntityFrameworkBackEnd.Repositorios
                 var instituicao = contexto.InstituicoesEnsino.Include("Cursos").First();
                 var alunosNovos = new List<Aluno>();
 
-                for (int i = 0; i < numRegistros; i++)
+                for (int i = 0; i < quantidadeRegistros; i++)
                 {
                     var aluno = new Aluno
                     {
@@ -225,10 +212,10 @@ namespace LabEntityFrameworkBackEnd.Repositorios
 
                 RegisterEndTime();
             }
-            return GetExecutionTime();
+            return this.GetExecutionTime;
         }
 
-        public TimeSpan InsertSemBulkInsert(int numRegistros)
+        public TimeSpan InsertSemBulkInsert(int quantidadeRegistros)
         {
             using (var contexto = new Contexto())
             {
@@ -236,7 +223,7 @@ namespace LabEntityFrameworkBackEnd.Repositorios
 
                 var instituicao = contexto.InstituicoesEnsino.Include("Cursos").First();
 
-                for (int i = 0; i < numRegistros; i++)
+                for (int i = 0; i < quantidadeRegistros; i++)
                 {
                     var aluno = new Aluno
                     {
@@ -251,7 +238,8 @@ namespace LabEntityFrameworkBackEnd.Repositorios
 
                 RegisterEndTime();
             }
-            return GetExecutionTime();
+
+            return this.GetExecutionTime;
         }
 
 
@@ -263,24 +251,30 @@ namespace LabEntityFrameworkBackEnd.Repositorios
             }
         }
 
-        public TimeSpan GetTime()
+        private TimeSpan GetTime
         {
-            return new TimeSpan(0, 0, DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Millisecond);
+            get
+            {
+                return new TimeSpan(0, 0, DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Millisecond);
+            }
         }
 
         public void RegisterStartTime()
         {
-            StartTime = GetTime();
+            StartTime = this.GetTime;
         }
 
         public void RegisterEndTime()
         {
-            EndTime = GetTime();
+            EndTime = this.GetTime;
         }
 
-        public TimeSpan GetExecutionTime()
+        private TimeSpan GetExecutionTime
         {
-            return EndTime.Subtract(StartTime);
+            get
+            {
+                return EndTime.Subtract(StartTime);
+            }
         }
     }
 }

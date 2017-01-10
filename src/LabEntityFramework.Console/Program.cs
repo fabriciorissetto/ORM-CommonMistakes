@@ -3,213 +3,166 @@ using LabEntityFrameworkBackEnd.Repositorios;
 using System;
 using System.Collections.Generic;
 
-namespace LabEntityFramework.Console
+namespace LabEntityFramework.ConsoleApp
 {
     static class Program
     {
-        private static Repositorio repositorio;
-        static readonly int numeroRegistrosExemploNMaisUm = 10000;
-        static readonly int numeroRegistrosExemploProjecao = 100;
-        static readonly int numeroRegistrosRecursosDesnecessarios = 1000;
-        static readonly int numeroRegistrosObjetosDesnecessariosContexto = 20000;
-        static readonly int numeroRegistrosBulkInsert = 1000;
+        private static Repositorio repositorio = new Repositorio();
+
+        static readonly int quantidadeRegistrosExemploNMaisUm = 10000;
+        static readonly int quantidadeRegistrosExemploProjecao = 500;
+        static readonly int quantidadeRegistrosRecursosDesnecessarios = 1000;
+        static readonly int quantidadeRegistrosObjetosDesnecessariosContexto = 20000;
+        static readonly int quantidadeRegistrosBulkInsert = 1000;
 
         static void Main()
         {
-            repositorio = new Repositorio();
-            ShowLoading("Testando conexão com banco de dados...");
-            repositorio.InicializaEFMigrationsNaoAfetarTempo();
-            ShowLoading("Conexão OK!");
+            InicializaEF();
 
             MostrarMenu();
             SolicitarOpcaoMenu();
 
-            System.Console.Read();
+            Console.Read();
+        }
+
+        private static void InicializaEF()
+        {
+            Console.Write("Testando conexão com banco de dados... ");
+            repositorio.InicializaEFMigrationsNaoAfetarTempo();
+            Console.WriteLine("Conexão OK!");
         }
 
         static void Um_N_Mais_Problema()
         {
-            ShowLoading(string.Format("Executando exemplo 1.1 com {0}, aguarde ...", numeroRegistrosExemploNMaisUm));
-            repositorio.InicializaEFMigrationsNaoAfetarTempo();
-            var tempoExecucao = repositorio.Um_N_Mais_Problema(numeroRegistrosExemploNMaisUm);
+            Console.WriteLine(string.Format("Executando exemplo 1.1 com {0}, aguarde ...", quantidadeRegistrosExemploNMaisUm));
+            var tempoExecucao = repositorio.Um_N_Mais_Problema(quantidadeRegistrosExemploNMaisUm);
 
-            System.Console.WriteLine(string.Format("Tempo de execução com N + 1: {0} segundos", tempoExecucao.TotalSeconds));
-            System.Console.WriteLine("");
-
-            SolicitarOpcaoMenu();
+            ImprimeResultadoRuim("com N + 1", tempoExecucao);
         }
 
         static void Um_N_Mais_Solucao()
         {
-            ShowLoading(string.Format("Executando exemplo 1.2 com {0}, aguarde ...", numeroRegistrosExemploNMaisUm));
-            repositorio.InicializaEFMigrationsNaoAfetarTempo();
+            Console.WriteLine(string.Format("Executando exemplo 1.2 com {0}, aguarde ...", quantidadeRegistrosExemploNMaisUm));
+            var tempoExecucao = repositorio.Um_N_Mais_Solucao(quantidadeRegistrosExemploNMaisUm);
 
-            var tempoExecucaoSem = repositorio.Um_N_Mais_Solucao(numeroRegistrosExemploNMaisUm);
-
-            System.Console.WriteLine(string.Format("Tempo de execução com Include(): {0} segundos", tempoExecucaoSem.TotalSeconds));
-            System.Console.WriteLine("");
-
-            SolicitarOpcaoMenu();
+            ImprimeResultadoBom("com Include()", tempoExecucao);
         }
 
 
         static void Dois_Projecao_Sem_Projecao()
         {
-            ShowLoading(string.Format("Executando exemplo 2.1 com {0}, aguarde ...", numeroRegistrosExemploProjecao));
-            repositorio.InicializaEFMigrationsNaoAfetarTempo();
+            Console.WriteLine(string.Format("Executando exemplo 2.1 com {0}, aguarde ...", quantidadeRegistrosExemploProjecao));
 
-            var tempoExecucao = repositorio.Dois_Projecao_Sem_Projecao(numeroRegistrosExemploProjecao);
+            var tempoExecucao = repositorio.Dois_Projecao_Sem_Projecao(quantidadeRegistrosExemploProjecao);
 
-            System.Console.WriteLine(string.Format("Tempo de execução SEM Projeção: {0} segundos", tempoExecucao.TotalSeconds));
-            System.Console.WriteLine("");
-
-            SolicitarOpcaoMenu();
+            ImprimeResultadoRuim("SEM Projeção", tempoExecucao);
         }
 
         static void Dois_Projecao_Com_Projecao()
         {
-            ShowLoading(string.Format("Executando exemplo 2.2 com {0}, aguarde ...", numeroRegistrosExemploProjecao));
-            repositorio.InicializaEFMigrationsNaoAfetarTempo();
+            Console.WriteLine(string.Format("Executando exemplo 2.2 com {0}, aguarde ...", quantidadeRegistrosExemploProjecao));
 
-            var tempoExecucao = repositorio.Dois_Projecao_Com_Projecao(numeroRegistrosExemploProjecao);
+            var tempoExecucao = repositorio.Dois_Projecao_Com_Projecao(quantidadeRegistrosExemploProjecao);
 
-            System.Console.WriteLine(string.Format("Tempo de execução COM Projeção: {0} segundos", tempoExecucao.TotalSeconds));
-            System.Console.WriteLine("");
-
-            SolicitarOpcaoMenu();
+            ImprimeResultadoBom("COM Projeção", tempoExecucao);
         }
-
 
         static void Tres_Operacoes_Recursos_Desnecessarios()
         {
-            ShowLoading(string.Format("Executando exemplo 3.1 com {0}, aguarde ...", numeroRegistrosRecursosDesnecessarios));
-            repositorio.InicializaEFMigrationsNaoAfetarTempo();
+            Console.WriteLine(string.Format("Executando exemplo 3.1 com {0}, aguarde ...", quantidadeRegistrosRecursosDesnecessarios));
 
-            var tempoExecucao = repositorio.Tres_UsoDetectChangesHabilitado(numeroRegistrosRecursosDesnecessarios);
+            var tempoExecucao = repositorio.Tres_UsoDetectChangesHabilitado(quantidadeRegistrosRecursosDesnecessarios);
 
-            System.Console.WriteLine(string.Format("Tempo de execução com AutoDetectChanges HABILITADO: {0} segundos", tempoExecucao.TotalSeconds));
-            System.Console.WriteLine("");
-
-            SolicitarOpcaoMenu();
+            ImprimeResultadoRuim("com AutoDetectChanges HABILITADO", tempoExecucao);
         }
 
         static void Tres_Operacoes_Recursos_Desnecessarios_Otimizado()
         {
-            ShowLoading(string.Format("Executando exemplo 3.2 com {0}, aguarde ...", numeroRegistrosRecursosDesnecessarios));
-            repositorio.InicializaEFMigrationsNaoAfetarTempo();
+            Console.WriteLine(string.Format("Executando exemplo 3.2 com {0}, aguarde ...", quantidadeRegistrosRecursosDesnecessarios));
 
-            var tempoExecucao = repositorio.Tres_UsoDetectChangesDesabilitado(numeroRegistrosRecursosDesnecessarios);
+            var tempoExecucao = repositorio.Tres_UsoDetectChangesDesabilitado(quantidadeRegistrosRecursosDesnecessarios);
 
-            System.Console.WriteLine(string.Format("Tempo de execução com AutoDetectChanges DESABILITADO: {0} segundos", tempoExecucao.TotalSeconds));
-            System.Console.WriteLine("");
-
-            SolicitarOpcaoMenu();
+            ImprimeResultadoBom("AutoDetectChanges DESABILITADO", tempoExecucao);
         }
 
 
         static void Quatro_Objetos_Desnecessarios_Contexto()
         {
-            ShowLoading(string.Format("Executando exemplo 4.1 com {0}, aguarde ...", numeroRegistrosObjetosDesnecessariosContexto));
-            repositorio.InicializaEFMigrationsNaoAfetarTempo();
+            Console.WriteLine(string.Format("Executando exemplo 4.1 com {0}, aguarde ...", quantidadeRegistrosObjetosDesnecessariosContexto));
 
-            var tempoExecucao = repositorio.Quatro_Objetos_Desnecessarios_Contexto(numeroRegistrosObjetosDesnecessariosContexto);
+            var tempoExecucao = repositorio.Quatro_Objetos_Desnecessarios_Contexto(quantidadeRegistrosObjetosDesnecessariosContexto);
 
-            System.Console.WriteLine(string.Format("Tempo de execução SEM AsNoTracking(): {0} segundos", tempoExecucao.TotalSeconds));
-            System.Console.WriteLine("");
-
-            SolicitarOpcaoMenu();
+            ImprimeResultadoRuim("SEM AsNoTracking()", tempoExecucao);
         }
 
         static void Quatro_Objetos_Desnecessarios_Contexto_Com_AsNoTracking()
         {
-            ShowLoading(string.Format("Executando exemplo 4.2 com {0}, aguarde ...", numeroRegistrosObjetosDesnecessariosContexto));
-            repositorio.InicializaEFMigrationsNaoAfetarTempo();
+            Console.WriteLine(string.Format("Executando exemplo 4.2 com {0}, aguarde ...", quantidadeRegistrosObjetosDesnecessariosContexto));
 
-            var tempoExecucao = repositorio.Quatro_Objetos_Desnecessarios_Contexto_Com_AsNoTracking(numeroRegistrosObjetosDesnecessariosContexto);
+            var tempoExecucao = repositorio.Quatro_Objetos_Desnecessarios_Contexto_Com_AsNoTracking(quantidadeRegistrosObjetosDesnecessariosContexto);
 
-            System.Console.WriteLine(string.Format("Tempo de execução COM AsNoTracking(): {0} segundos", tempoExecucao.TotalSeconds));
-            System.Console.WriteLine("");
-
-            SolicitarOpcaoMenu();
+            ImprimeResultadoBom("COM AsNoTracking()", tempoExecucao);
         }
 
         static void InsertSemBulkInsert()
         {
-            ShowLoading(string.Format("Executando exemplo 5.1 com {0} registros, aguarde ...", numeroRegistrosBulkInsert));
-            repositorio.InicializaEFMigrationsNaoAfetarTempo();
+            Console.WriteLine(string.Format("Executando exemplo 5.1 com {0} registros, aguarde ...", quantidadeRegistrosBulkInsert));
 
-            var tempoExecucao = repositorio.InsertSemBulkInsert(numeroRegistrosBulkInsert);
+            var tempoExecucao = repositorio.InsertSemBulkInsert(quantidadeRegistrosBulkInsert);
 
-            System.Console.WriteLine(string.Format("Tempo de execução SEM BulkInsert: {0} segundos", tempoExecucao.TotalSeconds));
-            System.Console.WriteLine("");
-
-            SolicitarOpcaoMenu();
+            ImprimeResultadoRuim("SEM BulkInsert", tempoExecucao);
         }
 
         static void InsertComBulkInsert()
         {
-            ShowLoading(string.Format("Executando exemplo 5.2 com {0} registros, aguarde ...", numeroRegistrosBulkInsert));
-            repositorio.InicializaEFMigrationsNaoAfetarTempo();
+            Console.WriteLine(string.Format("Executando exemplo 5.2 com {0} registros, aguarde ...", quantidadeRegistrosBulkInsert));
 
-            var tempoExecucao = repositorio.InsertComBulkInsert(numeroRegistrosBulkInsert);
+            var tempoExecucao = repositorio.InsertComBulkInsert(quantidadeRegistrosBulkInsert);
 
-            System.Console.WriteLine(string.Format("Tempo de execução COM BulkInsert: {0} segundos", tempoExecucao.TotalSeconds));
-            System.Console.WriteLine("");
-
-            SolicitarOpcaoMenu();
+            ImprimeResultadoBom("COM BulkInsert", tempoExecucao);
         }
 
         private static void MostrarMenu()
         {
-            System.Console.WriteLine("------------------------------------------------------");
-            System.Console.WriteLine("Exemplos N+1");
-            System.Console.WriteLine("------------------------------------------------------");
-            System.Console.WriteLine("1.1 - Executar consulta COM N+1.");
-            System.Console.WriteLine("1.2 - Executar consulta SEM N+1.");
-            System.Console.WriteLine("------------------------------------------------------");
-            System.Console.WriteLine("Exemplos uso de Projeção");
-            System.Console.WriteLine("------------------------------------------------------");
-            System.Console.WriteLine("2.1 - Executar consulta SEM Projeção.");
-            System.Console.WriteLine("2.2 - Executar consulta COM Projeção.");
-            System.Console.WriteLine("------------------------------------------------------");
-            System.Console.WriteLine("Exemplos recursos desnecessários");
-            System.Console.WriteLine("------------------------------------------------------");
-            System.Console.WriteLine("3.1 - Executar inserção com AutoDetectChanges HABILITADO.");
-            System.Console.WriteLine("3.2 - Executar inserção com AutoDetectChanges DESABILITADO.");
-            System.Console.WriteLine("------------------------------------------------------");
-            System.Console.WriteLine("Exemplos objetos desnecessários no contexto");
-            System.Console.WriteLine("------------------------------------------------------");
-            System.Console.WriteLine("4.1 - Executar consulta SEM AsNoTracking().");
-            System.Console.WriteLine("4.2 - Executar consulta COM AsNoTracking().");
-            System.Console.WriteLine("------------------------------------------------------");
-            System.Console.WriteLine("Uso de BulkInsert");
-            System.Console.WriteLine("------------------------------------------------------");
-            System.Console.WriteLine("5.1 - Executar insert de forma simples.");
-            System.Console.WriteLine("5.2 - Executar insert com BulkInsert.");
-            System.Console.WriteLine("------------------------------------------------------");
+            Console.WriteLine("------------------------------------------------------");
+            Console.WriteLine("Exemplos N+1");
+            Console.WriteLine("------------------------------------------------------");
+            Console.WriteLine("1.1 - Executar consulta COM N+1.");
+            Console.WriteLine("1.2 - Executar consulta SEM N+1.");
+            Console.WriteLine("------------------------------------------------------");
+            Console.WriteLine("Exemplos uso de Projeção");
+            Console.WriteLine("------------------------------------------------------");
+            Console.WriteLine("2.1 - Executar consulta SEM Projeção.");
+            Console.WriteLine("2.2 - Executar consulta COM Projeção.");
+            Console.WriteLine("------------------------------------------------------");
+            Console.WriteLine("Exemplos recursos desnecessários");
+            Console.WriteLine("------------------------------------------------------");
+            Console.WriteLine("3.1 - Executar inserção com AutoDetectChanges HABILITADO.");
+            Console.WriteLine("3.2 - Executar inserção com AutoDetectChanges DESABILITADO.");
+            Console.WriteLine("------------------------------------------------------");
+            Console.WriteLine("Exemplos objetos desnecessários no contexto");
+            Console.WriteLine("------------------------------------------------------");
+            Console.WriteLine("4.1 - Executar consulta SEM AsNoTracking().");
+            Console.WriteLine("4.2 - Executar consulta COM AsNoTracking().");
+            Console.WriteLine("------------------------------------------------------");
+            Console.WriteLine("Uso de BulkInsert");
+            Console.WriteLine("------------------------------------------------------");
+            Console.WriteLine("5.1 - Executar insert de forma simples.");
+            Console.WriteLine("5.2 - Executar insert com BulkInsert.");
+            Console.WriteLine("------------------------------------------------------");
+            Console.WriteLine();
         }
 
         private static void SolicitarOpcaoMenu()
         {
-            System.Console.WriteLine("Escolha o número da opção desejada e pressione qualquer tecla.");
-            System.Console.WriteLine("");
-            System.Console.CursorVisible = true;
+            Console.WriteLine("\nEscolha o número da opção desejada e pressione enter.");
 
-            var novaOpcao = System.Console.ReadLine().ToString();
+            var novaOpcao = Console.ReadLine();
             ExecutarOpcaoMenu(novaOpcao);
         }
 
         private static void ExecutarOpcaoMenu(string opcaoSelecionada)
         {
-            var opcoesValidas = new List<string> { "1.1", "1.2", "2.1", "2.2", "3.1", "3.2", "4.1", "4.2", "5.1", "5.2" };
-
-            if (!opcoesValidas.Contains(opcaoSelecionada.Trim()))
-            {
-                System.Console.WriteLine("Opção inválida, digite novamente o número da opção desejada.");
-
-                SolicitarOpcaoMenu();
-            }
-
             switch (opcaoSelecionada)
             {
                 case "1.1":
@@ -243,17 +196,28 @@ namespace LabEntityFramework.Console
                     InsertComBulkInsert();
                     break;
                 default:
-                    Um_N_Mais_Problema();
                     break;
             }
-
+            
+            SolicitarOpcaoMenu();
         }
 
-        private static void ShowLoading(string mensagem)
+        private static void ImprimeResultadoRuim(string texto, TimeSpan tempoExecucao)
         {
-            System.Console.WriteLine();
-            System.Console.WriteLine(mensagem);
+            Console.Write("\nTempo de execução " + texto + ": ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write(tempoExecucao.TotalSeconds);
+            Console.ResetColor();
+            Console.Write(" segundos\n");
         }
 
+        private static void ImprimeResultadoBom(string texto, TimeSpan tempoExecucao)
+        {
+            Console.Write("\nTempo de execução " + texto + ": ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write(tempoExecucao.TotalSeconds);
+            Console.ResetColor();
+            Console.Write(" segundos\n");
+        }
     }
 }
