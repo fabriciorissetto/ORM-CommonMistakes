@@ -1,6 +1,6 @@
 # ORM - O que estamos fazendo errado?
 
-Apresentação e exemplos de código criadas por *Marcelo Wildfaier* e adaptadas por *Fabrício Rissetto*.
+Apresentação e exemplos de código criados por *Marcelo Wildfaier* e adaptados por *Fabrício Rissetto*.
 
 # Como executar os exemplos
 
