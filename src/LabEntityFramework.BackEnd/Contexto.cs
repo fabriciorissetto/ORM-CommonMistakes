@@ -7,7 +7,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace LabEntityFrameworkBackEnd
 {
-	public class Contexto : DbContext, IDisposable
+	public class Contexto : DbContext
 	{
 		public DbSet<InstituicaoEnsino> InstituicoesEnsino { get; set; }
 		public DbSet<Aluno> Alunos { get; set; }

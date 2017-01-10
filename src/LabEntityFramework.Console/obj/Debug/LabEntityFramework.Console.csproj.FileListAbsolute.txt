@@ -93,3 +93,19 @@ C:\Users\PC\Desktop\ORM _v2\ORM-CommonMistakes\src\LabEntityFramework.Console\bi
 C:\Users\PC\Desktop\ORM _v2\ORM-CommonMistakes\src\LabEntityFramework.Console\bin\Debug\EntityFramework.BulkInsert.pdb
 C:\Users\PC\Desktop\ORM _v2\ORM-CommonMistakes\src\LabEntityFramework.Console\bin\Debug\EntityFramework.MappingAPI.pdb
 C:\Users\PC\Desktop\ORM _v2\ORM-CommonMistakes\src\LabEntityFramework.Console\obj\Debug\LabEntityFramework.Console.csprojResolveAssemblyReference.cache
+C:\Projects\Git\ORM-CommonMistakes\src\LabEntityFramework.Console\bin\Debug\LabEntityFramework.Console.exe.config
+C:\Projects\Git\ORM-CommonMistakes\src\LabEntityFramework.Console\bin\Debug\LabEntityFramework.Console.exe
+C:\Projects\Git\ORM-CommonMistakes\src\LabEntityFramework.Console\bin\Debug\LabEntityFramework.Console.pdb
+C:\Projects\Git\ORM-CommonMistakes\src\LabEntityFramework.Console\bin\Debug\EntityFramework.dll
+C:\Projects\Git\ORM-CommonMistakes\src\LabEntityFramework.Console\bin\Debug\EntityFramework.SqlServer.dll
+C:\Projects\Git\ORM-CommonMistakes\src\LabEntityFramework.Console\bin\Debug\LabEntityFrameworkBackEnd.dll
+C:\Projects\Git\ORM-CommonMistakes\src\LabEntityFramework.Console\bin\Debug\EntityFramework.BulkInsert.dll
+C:\Projects\Git\ORM-CommonMistakes\src\LabEntityFramework.Console\bin\Debug\EntityFramework.MappingAPI.dll
+C:\Projects\Git\ORM-CommonMistakes\src\LabEntityFramework.Console\bin\Debug\LabEntityFrameworkBackEnd.pdb
+C:\Projects\Git\ORM-CommonMistakes\src\LabEntityFramework.Console\bin\Debug\EntityFramework.xml
+C:\Projects\Git\ORM-CommonMistakes\src\LabEntityFramework.Console\bin\Debug\EntityFramework.SqlServer.xml
+C:\Projects\Git\ORM-CommonMistakes\src\LabEntityFramework.Console\bin\Debug\EntityFramework.BulkInsert.pdb
+C:\Projects\Git\ORM-CommonMistakes\src\LabEntityFramework.Console\bin\Debug\EntityFramework.MappingAPI.pdb
+C:\Projects\Git\ORM-CommonMistakes\src\LabEntityFramework.Console\obj\Debug\LabEntityFramework.Console.csprojResolveAssemblyReference.cache
+C:\Projects\Git\ORM-CommonMistakes\src\LabEntityFramework.Console\obj\Debug\LabEntityFramework.Console.exe
+C:\Projects\Git\ORM-CommonMistakes\src\LabEntityFramework.Console\obj\Debug\LabEntityFramework.Console.pdb

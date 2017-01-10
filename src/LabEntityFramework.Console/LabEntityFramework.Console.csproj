@@ -60,7 +60,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LabEntityFrameworkBackEnd\LabEntityFrameworkBackEnd.csproj">
+    <ProjectReference Include="..\LabEntityFramework.BackEnd\LabEntityFrameworkBackEnd.csproj">
       <Project>{be58ca9c-ecc2-4a80-aa1a-7eeeb3635daf}</Project>
       <Name>LabEntityFrameworkBackEnd</Name>
     </ProjectReference>

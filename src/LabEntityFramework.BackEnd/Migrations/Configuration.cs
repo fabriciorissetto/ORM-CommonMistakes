@@ -13,15 +13,16 @@ namespace LabEntityFrameworkBackEnd.Migrations
             AutomaticMigrationsEnabled = true;
         }
 
+        //A execução do conteúdo do método abaixo demora aproximadamente 1 hora
+        //Portanto, para a execução dos exemplos dessa aplicação de forma mais rápida 
+        //sugiro restaurar o backup da base disponível em https://github.com/fabriciorissetto/ORM-CommonMistakes/blob/master/BancoDeDadosExemplo_Backup.rar
         protected override void Seed(Contexto context)
         {
-            for (int i = 0; i < 500; ++i)
-            {
-                PopulaDados(i);
-            }
+            //for (int i = 0; i < 500; ++i)
+            //    PopulaBaseDeDados(i);
         }
 
-        private static void PopulaDados(int i)
+        private static void PopulaBaseDeDados(int i)
         {
             using (var contexto = new Contexto())
             {

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace LabEntityFramework.Console
 {
-    class Program
+    static class Program
     {
         private static Repositorio repositorio;
         static readonly int numeroRegistrosExemploNMaisUm = 10000;
@@ -14,7 +14,7 @@ namespace LabEntityFramework.Console
         static readonly int numeroRegistrosObjetosDesnecessariosContexto = 20000;
         static readonly int numeroRegistrosBulkInsert = 1000;
 
-        static void Main(string[] args)
+        static void Main()
         {
             repositorio = new Repositorio();
             ShowLoading("Testando conexão com banco de dados...");
@@ -50,7 +50,6 @@ namespace LabEntityFramework.Console
             System.Console.WriteLine("");
 
             SolicitarOpcaoMenu();
-
         }
 
 
@@ -162,7 +161,6 @@ namespace LabEntityFramework.Console
 
         private static void MostrarMenu()
         {
-            System.Console.WriteLine("Opções:");
             System.Console.WriteLine("------------------------------------------------------");
             System.Console.WriteLine("Exemplos N+1");
             System.Console.WriteLine("------------------------------------------------------");
