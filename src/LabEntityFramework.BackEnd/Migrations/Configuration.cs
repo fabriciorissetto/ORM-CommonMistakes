@@ -26,6 +26,8 @@ namespace LabEntityFrameworkBackEnd.Migrations
         {
             using (var contexto = new Contexto())
             {
+                contexto.Configuration.AutoDetectChangesEnabled = false;
+
                 var instituicao = new InstituicaoEnsino
                 {
                     Nome = string.Concat("Instituição ", i),
