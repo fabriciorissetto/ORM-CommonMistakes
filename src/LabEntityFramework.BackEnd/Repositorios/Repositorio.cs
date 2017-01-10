@@ -152,8 +152,7 @@ namespace LabEntityFrameworkBackEnd.Repositorios
                     };
                     contexto.Alunos.Add(aluno);
                 }
-
-                contexto.Configuration.AutoDetectChangesEnabled = true;
+                
                 contexto.SaveChanges();
 
                 RegisterEndTime();
