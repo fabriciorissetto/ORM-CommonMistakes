@@ -61,7 +61,6 @@ namespace LabEntityFrameworkBackEnd.Repositorios
             return this.GetExecutionTime;
         }
 
-
         public TimeSpan Dois_Projecao_Sem_Projecao(int quantidadeRegistros)
         {
             using (var contexto = new Contexto())
@@ -70,9 +69,14 @@ namespace LabEntityFrameworkBackEnd.Repositorios
 
                 var instituicoes = contexto.InstituicoesEnsino
                                             .Include(x => x.Cursos)
-                                            .AsNoTracking()
                                             .Take(quantidadeRegistros)
                                             .ToList();
+
+                foreach (var instituicao in instituicoes)
+                {
+                    var nomeInstituicao = instituicao.Nome;
+                    var quantidadeCursos = instituicao.Cursos.Count();
+                }
 
                 RegisterEndTime();
             }
@@ -125,6 +129,7 @@ namespace LabEntityFrameworkBackEnd.Repositorios
 
                 RegisterEndTime();
             }
+
             return this.GetExecutionTime;
         }
 
@@ -132,10 +137,9 @@ namespace LabEntityFrameworkBackEnd.Repositorios
         {
             using (var contexto = new Contexto())
             {
-                contexto.Configuration.AutoDetectChangesEnabled = false;
-
                 RegisterStartTime();
 
+                contexto.Configuration.AutoDetectChangesEnabled = false;
                 var instituicao = contexto.InstituicoesEnsino.Include("Cursos").First();
 
                 for (int i = 0; i < quantidadeRegistros; i++)
@@ -154,6 +158,7 @@ namespace LabEntityFrameworkBackEnd.Repositorios
 
                 RegisterEndTime();
             }
+
             return this.GetExecutionTime;
         }
 
@@ -164,11 +169,14 @@ namespace LabEntityFrameworkBackEnd.Repositorios
             {
                 RegisterStartTime();
 
-                var alunos = context.Alunos.Include("Curso")
-                    .Take(quantidadeRegistros).ToList();
+                var alunos = context.Alunos
+                                    .Include("Curso")
+                                    .Take(quantidadeRegistros)
+                                    .ToList();
 
                 RegisterEndTime();
             }
+
             return this.GetExecutionTime;
         }
 
@@ -178,40 +186,15 @@ namespace LabEntityFrameworkBackEnd.Repositorios
             {
                 RegisterStartTime();
 
-                var alunos = context.Alunos.Include("Curso")
-                    .AsNoTracking()
-                    .Take(quantidadeRegistros).ToList();
+                var alunos = context.Alunos
+                                    .Include("Curso")
+                                    .AsNoTracking()
+                                    .Take(quantidadeRegistros)
+                                    .ToList();
 
                 RegisterEndTime();
             }
-            return this.GetExecutionTime;
-        }
 
-
-        public TimeSpan InsertComBulkInsert(int quantidadeRegistros)
-        {
-            using (var contexto = new Contexto())
-            {
-                RegisterStartTime();
-
-                var instituicao = contexto.InstituicoesEnsino.Include("Cursos").First();
-                var alunosNovos = new List<Aluno>();
-
-                for (int i = 0; i < quantidadeRegistros; i++)
-                {
-                    var aluno = new Aluno
-                    {
-                        Nome = string.Concat("Aluno inserido com bulkInsert ", i),
-                        Instituicao = instituicao,
-                        Curso = instituicao.Cursos.First(),
-                        Matricula = (i + 1).ToString().PadLeft(6, '0')
-                    };
-                    alunosNovos.Add(aluno);
-                }
-                contexto.BulkInsert(alunosNovos);
-
-                RegisterEndTime();
-            }
             return this.GetExecutionTime;
         }
 
@@ -219,6 +202,7 @@ namespace LabEntityFrameworkBackEnd.Repositorios
         {
             using (var contexto = new Contexto())
             {
+                contexto.Configuration.AutoDetectChangesEnabled = false;
                 RegisterStartTime();
 
                 var instituicao = contexto.InstituicoesEnsino.Include("Cursos").First();
@@ -242,6 +226,34 @@ namespace LabEntityFrameworkBackEnd.Repositorios
             return this.GetExecutionTime;
         }
 
+        public TimeSpan InsertComBulkInsert(int quantidadeRegistros)
+        {
+            using (var contexto = new Contexto())
+            {
+                contexto.Configuration.AutoDetectChangesEnabled = false;
+                RegisterStartTime();
+
+                var instituicao = contexto.InstituicoesEnsino.Include("Cursos").First();
+
+                var alunosNovos = new List<Aluno>();
+                for (int i = 0; i < quantidadeRegistros; i++)
+                {
+                    var aluno = new Aluno
+                    {
+                        Nome = string.Concat("Aluno inserido com bulkInsert ", i),
+                        Instituicao = instituicao,
+                        Curso = instituicao.Cursos.First(),
+                        Matricula = (i + 1).ToString().PadLeft(6, '0')
+                    };
+                    alunosNovos.Add(aluno);
+                }
+                contexto.BulkInsert(alunosNovos);
+
+                RegisterEndTime();
+            }
+
+            return this.GetExecutionTime;
+        }
 
         public void InicializaEFMigrationsNaoAfetarTempo()
         {

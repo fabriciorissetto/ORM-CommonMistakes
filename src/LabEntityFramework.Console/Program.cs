@@ -12,8 +12,8 @@ namespace LabEntityFramework.ConsoleApp
         static readonly int quantidadeRegistrosExemploNMaisUm = 10000;
         static readonly int quantidadeRegistrosExemploProjecao = 500;
         static readonly int quantidadeRegistrosRecursosDesnecessarios = 1000;
-        static readonly int quantidadeRegistrosObjetosDesnecessariosContexto = 20000;
-        static readonly int quantidadeRegistrosBulkInsert = 1000;
+        static readonly int quantidadeRegistrosObjetosDesnecessariosContexto = 30000;
+        static readonly int quantidadeRegistrosBulkInsert = 5000;
 
         static void Main()
         {
