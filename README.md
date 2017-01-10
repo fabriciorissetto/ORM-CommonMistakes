@@ -1,6 +1,6 @@
-# ORM-CommonMistakes
+# ORM - O que estamos fazendo errado?
 
-Apresentação e exemplos de código criadas por Marcelo Wildfaier e adaptadas por Fabrício Rissetto.
+Apresentação e exemplos de código criadas por *Marcelo Wildfaier* e adaptadas por *Fabrício Rissetto*.
 
 # Como executar os exemplos
 
@@ -12,5 +12,5 @@ OBS: O método de Seed do `Configuration.cs` está comentado pois demora muito p
 2. Rode o comando `Update-Database` no Package Manager Console do NuGet
 3. Vá fazer um chimarrão
 
-### 2. Rode a aplicação Console que o banco de dados será criado em localdb (mude a connection string caso deseje criar em outro local)
+### 2. Rode a aplicação Console e siga as opções do menu
 
